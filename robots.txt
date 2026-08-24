@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jogogames.github.io/Jogos.Games/sitemap.xml

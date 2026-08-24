@@ -1,0 +1,22 @@
+{
+  "name": "Jogos do Professor Ildebrando Leandro",
+  "short_name": "Ildebrando Games",
+  "description": "Jogos online do Professor Ildebrando Leandro.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#02050d",
+  "theme_color": "#02050d",
+  "icons": [
+    {
+      "src": "assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+SITE SEO COMPLETO — PASSO A PASSO
+
+URL configurada:
+https://jogogames.github.io/Jogos.Games/
+
+ANTES DE ENVIAR AO GOOGLE
+1. Crie o repositório GitHub: JogoGames / Jogos.Games
+2. Envie TODO o conteúdo desta pasta, mantendo assets/audio e assets/images.
+3. Ative GitHub Pages em Settings > Pages > Deploy from a branch > main / root.
+4. Abra https://jogogames.github.io/Jogos.Games/ e confirme que o jogo, imagens e sons carregam.
+5. Abra diretamente:
+   https://jogogames.github.io/Jogos.Games/assets/images/professor-ildebrando-jogos-1200x630.jpg
+   Essa é a imagem usada pelo WhatsApp/Facebook/X.
+
+GOOGLE SEARCH CONSOLE
+1. Entre em https://search.google.com/search-console/
+2. Adicione a propriedade URL-prefix:
+   https://jogogames.github.io/Jogos.Games/
+3. Faça a verificação pelo método oferecido pelo Google.
+4. Vá em Sitemaps e envie:
+   sitemap.xml
+5. Vá em Inspeção de URL, cole:
+   https://jogogames.github.io/Jogos.Games/
+6. Clique em Solicitar indexação.
+
+ARQUIVOS INCLUÍDOS
+- index.html: SEO, Open Graph, X/Twitter Card, JSON-LD.
+- robots.txt
+- sitemap.xml com as imagens.
+- site.webmanifest
+- favicon em vários tamanhos.
+- imagem social 1200x630.
+- imagens 16:9, 4:3 e 1:1.
+- conteúdo textual visível para melhorar compreensão do Google.
+
+OBSERVAÇÃO
+Nenhuma configuração pode obrigar o Google a exibir uma imagem específica no resultado.
+O pacote fornece sinais fortes e permite que Google, WhatsApp, Facebook e X rastreiem a imagem.

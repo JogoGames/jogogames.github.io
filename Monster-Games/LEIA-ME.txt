@@ -1,0 +1,40 @@
+PROFESSOR ILDEBRANDO — FUGINDO DOS MONSTROS (NEON)
+
+ARQUIVO PRINCIPAL:
+jogo.html
+
+RECURSOS:
+- Responsivo para computador e celular
+- Personagem do Professor Ildebrando usando os sprites enviados
+- Controles de teclado e botões touch
+- Música musicgame.mp3
+- Som de pulo jumping.wav
+- Sons extras gerados no navegador para moedas e dano
+- Visual LED/neon
+- Pontuação, moedas, vidas, energia e recorde salvo
+- Plataformas, blocos, canos e monstros
+- Pausa e botão de som
+- Tela inicial e tela de game over
+
+CONTROLES NO PC:
+Setas ou A/D: mover
+Seta para cima / W / Espaço: pular
+Seta para baixo / S: agachar
+P: pausar
+
+NO CELULAR:
+Use as setas na tela e o botão PULAR.
+
+PARA PUBLICAR NO NOVO SITE:
+Você pode criar uma pasta, por exemplo /mario/ ou /fugindo-dos-monstros/,
+e enviar jogo.html + pasta assets.
+
+
+ATUALIZAÇÃO 2
+- Personagem agora pousa e fica parado em pé sobre as caixas.
+- Monstros marrons adicionados em maior quantidade.
+- Monstros rosas continuam no jogo e são mais rápidos.
+- Superpoder ESCUDO: proteção temporária.
+- Superpoder TURBO: aumenta a velocidade.
+- Superpoder SUPER PULO: aumenta a altura do salto.
+- Aura neon indica quando um poder está ativo.
