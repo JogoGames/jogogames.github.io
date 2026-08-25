@@ -1,10 +1,12 @@
 {
-  "name": "Professor Ildebrando Leandro - Zombie Attack",
-  "short_name": "Zombie Attack",
+  "name": "Jogos do Professor Ildebrando Leandro",
+  "short_name": "Ildebrando Games",
+  "description": "Jogos online do Professor Ildebrando Leandro.",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#030611",
-  "theme_color": "#030611",
+  "background_color": "#02050d",
+  "theme_color": "#02050d",
   "icons": [
     {
       "src": "assets/favicon-192.png",
