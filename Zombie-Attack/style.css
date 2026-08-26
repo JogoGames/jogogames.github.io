@@ -331,7 +331,7 @@ footer{text-align:center;color:#7f95b2;padding:18px 0 30px;font-size:12px}
     position:absolute;
     left:10px;
     right:10px;
-    bottom:calc(34px + env(safe-area-inset-bottom));
+    bottom:calc(18px + env(safe-area-inset-bottom));
     z-index:30;
     justify-content:space-between;
     align-items:flex-end;
@@ -411,7 +411,7 @@ footer{text-align:center;color:#7f95b2;padding:18px 0 30px;font-size:12px}
   .mobile-controls{
     left:7px;
     right:7px;
-    bottom:calc(30px + env(safe-area-inset-bottom));
+    bottom:calc(16px + env(safe-area-inset-bottom));
     gap:6px;
   }
 
@@ -453,7 +453,7 @@ footer{text-align:center;color:#7f95b2;padding:18px 0 30px;font-size:12px}
   }
 
   .mobile-controls{
-    bottom:calc(24px + env(safe-area-inset-bottom));
+    bottom:calc(12px + env(safe-area-inset-bottom));
   }
 
   .leftpad{
@@ -481,3 +481,7 @@ footer{text-align:center;color:#7f95b2;padding:18px 0 30px;font-size:12px}
 }
 
 /* BUILD MOBILE v4 - 2026-08-26 */
+
+/* BUILD FINAL v5 - 2026-08-26 */
+
+/* BUILD FINAL v6 - controles mobile mais baixos */
