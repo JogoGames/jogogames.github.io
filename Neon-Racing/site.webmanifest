@@ -1,0 +1,30 @@
+{
+  "name": "Neon Racing - Professor Ildebrando Leandro",
+  "short_name": "Neon Racing",
+  "description": "Jogo de corrida Neon Racing com QQ Chery do Professor Ildebrando Leandro.",
+  "start_url": "/Neon-Racing/",
+  "scope": "/Neon-Racing/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#030611",
+  "theme_color": "#030611",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
