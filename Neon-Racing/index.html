@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -21,13 +22,10 @@
 
   <!-- SEO -->
   <meta name="description" content="Jogue Neon Racing, o jogo online de corrida com QQ Chery do Professor Ildebrando Leandro. Use nitro, colete moedas, desvie do trânsito e bata recordes no computador ou celular.">
-
   <meta name="keywords" content="QQ Chery, Chery QQ, jogo QQ Chery, jogo Chery QQ, QQ Chery jogo, jogo de corrida QQ Chery, Neon Racing, Professor Ildebrando Leandro, jogo de corrida, jogo online grátis, jogo de carro, jogo neon">
-
   <meta name="author" content="Professor Ildebrando Leandro">
   <meta name="creator" content="Professor Ildebrando Leandro">
   <meta name="publisher" content="Professor Ildebrando Leandro">
-
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
@@ -36,13 +34,19 @@
   <meta name="color-scheme" content="dark">
 
   <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="assets/favicon.png?v=1">
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png?v=1">
+  <link rel="icon" type="image/png" href="/Neon-Racing/assets/favicon.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="/Neon-Racing/assets/favicon.png?v=2">
+
+  <!-- PWA / APLICATIVO -->
+  <link rel="manifest" href="/Neon-Racing/site.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Neon Racing">
+  <link rel="apple-touch-icon" href="/Neon-Racing/assets/icon-192.png">
 
   <!-- URL OFICIAL -->
   <link rel="canonical" href="https://jogogames.github.io/Neon-Racing/">
-
-  <!-- IDIOMAS -->
   <link rel="alternate" hreflang="pt-BR" href="https://jogogames.github.io/Neon-Racing/">
   <link rel="alternate" hreflang="pt-PT" href="https://jogogames.github.io/Neon-Racing/">
   <link rel="alternate" hreflang="x-default" href="https://jogogames.github.io/Neon-Racing/">
@@ -51,20 +55,13 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:locale:alternate" content="pt_PT">
-
   <meta property="og:site_name" content="Jogos do Professor Ildebrando Leandro">
-
   <meta property="og:title" content="Neon Racing – Jogo do QQ Chery | Professor Ildebrando Leandro">
-
   <meta property="og:description" content="Jogue Neon Racing com o QQ Chery. Use nitro, colete moedas, desvie do trânsito e supere seus recordes.">
-
   <meta property="og:url" content="https://jogogames.github.io/Neon-Racing/">
-
-  <!-- IMAGEM SOCIAL -->
   <meta property="og:image" content="https://jogogames.github.io/Neon-Racing/assets/whatsapp-neon-racing.jpg">
   <meta property="og:image:url" content="https://jogogames.github.io/Neon-Racing/assets/whatsapp-neon-racing.jpg">
   <meta property="og:image:secure_url" content="https://jogogames.github.io/Neon-Racing/assets/whatsapp-neon-racing.jpg">
-
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -72,17 +69,12 @@
 
   <!-- X / TWITTER -->
   <meta name="twitter:card" content="summary_large_image">
-
   <meta name="twitter:title" content="Neon Racing – Jogo do QQ Chery | Professor Ildebrando Leandro">
-
   <meta name="twitter:description" content="Jogue Neon Racing com o QQ Chery: corrida neon, nitro, moedas, trânsito e recordes.">
-
   <meta name="twitter:image" content="https://jogogames.github.io/Neon-Racing/assets/whatsapp-neon-racing.jpg">
-
   <meta name="twitter:image:alt" content="Neon Racing - Jogo do QQ Chery - Professor Ildebrando Leandro">
 
   <!-- DADOS ESTRUTURADOS PARA O GOOGLE -->
-  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -146,10 +138,12 @@
         <div><small>NITRO</small><b id="nitro">100%</b></div>
         <div><small>VELOCIDADE</small><b id="speed">0 km/h</b></div>
       </div>
+
       <div class="mission">
         <b>MISSÃO</b>
         <p>Desvie do trânsito, colete moedas, use nitro e alcance a maior distância possível com o QQ Chery.</p>
       </div>
+
       <div class="desktop-help">
         <b>COMPUTADOR</b><br>
         ← → / A D: direção<br>
@@ -162,6 +156,7 @@
 
     <section class="stage">
       <canvas id="game" width="900" height="1280"></canvas>
+
       <div id="intro" class="overlay">
         <img class="cover" src="assets/cover-neon-racing.png" alt="Capa Professor Ildebrando Leandro Neon Racing com QQ Chery">
         <div class="overlay-copy">
@@ -213,5 +208,22 @@
 </div>
 
 <script src="game.js?v=3"></script>
+
+<!-- REGISTRO DO SERVICE WORKER / PWA -->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker
+        .register("/Neon-Racing/service-worker.js")
+        .then(function (registration) {
+          console.log("Neon Racing PWA registrado com sucesso:", registration.scope);
+        })
+        .catch(function (error) {
+          console.error("Erro ao registrar o Neon Racing PWA:", error);
+        });
+    });
+  }
+</script>
+
 </body>
 </html>
