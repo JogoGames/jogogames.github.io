@@ -1,54 +1,18 @@
-PROFESSOR ILDEBRANDO LEANDRO - ZOMBIE ATTACK
+NEON RACING — Professor Ildebrando Leandro
 
-COMO PUBLICAR NO GITHUB:
-1. No repositório jogogames.github.io, crie uma pasta chamada Zombie-Attack
-2. Envie TODO o conteúdo desta pasta para dentro dela:
-   index.html
-   style.css
-   game.js
-   assets/
-3. Faça Commit changes.
-4. O endereço esperado será:
-   https://jogogames.github.io/Zombie-Attack/
+Estrutura:
+Neon-Racing/
+  index.html
+  style.css
+  game.js
+  LEIA-ME.txt
+  assets/
+    cover-neon-racing.png
+    logo-ildebrando.png
+    qq-chery.jpeg
 
-CONTROLES:
-A/D ou setas: mover
-W / seta para cima / Espaço: pular
-F: atirar
-K: faca
-1,2,3: trocar arma
-P: pausar
+Publique a pasta inteira no repositório jogogames.github.io.
+Endereço esperado: https://jogogames.github.io/Neon-Racing/
 
-O jogo também possui controles na tela para celular.
-
-
-VERSÃO V3
-- fundo cinematográfico dentro do gameplay
-- personagem com arma posicionada nas mãos
-- troca visual entre pistola, rifle M4 e escopeta
-- ataque com faca separado
-- zumbis menos "fantasma" e mais escuros/realistas
-
-
-VERSÃO V4
-- retiradas as fotos da faca e do rifle da interface
-- faca agora é desenhada dentro do jogo, sem fundo branco
-- armas aparecem somente nas mãos do personagem e mudam com 1/2/3
-- removida a bandeira desenhada dentro do gameplay
-- cenário do castelo mantido mais escuro e cinematográfico
-
-
-VERSÃO FINAL
-- relógio ao vivo de Portugal (fuso Europe/Lisbon)
-- logotipo dourado IL com LED animado contornando
-- scanner neon passando sobre a foto do professor
-- nome Professor Ildebrando Leandro com neon multicolorido
-- biografia atualizada: luso-brasileiro, nacionalidade portuguesa e brasileira
-
-
-ATUALIZAÇÃO MOEDAS E PRÊMIOS
-- moedas aparecem durante a fase
-- cada moeda vale +100 pontos
-- 5 moedas em sequência liberam um prêmio
-- prêmios possíveis: +10 munições, +500 pontos, escudo ou +1 vida
-- botão PAUSAR/CONTINUAR destacado
+Controles computador: A/D ou setas, W acelerar, S frear, Espaço nitro, P pausar.
+No celular, use os quatro botões na tela.
