@@ -9,8 +9,8 @@ const keys={left:false,right:false,up:false,down:false,fire:false,knife:false};
 let sound=true,last=0,state;
 
 function fresh(){
- return {running:false,paused:false,t:0,score:0,best:+localStorage.getItem('ildeZombieBest')||0,wave:1,kills:0,lives:5,ammo:18,
- distance:0,speed:210,spawn:0,zombies:[],bullets:[],blood:[],pickups:[],obstacles:[],nextObstacle:700,
+ return {running:false,paused:false,t:0,score:0,best:+localStorage.getItem('ildeZombieBest')||0,wave:1,kills:0,lives:7,ammo:24,
+ distance:0,speed:175,spawn:0,zombies:[],bullets:[],blood:[],pickups:[],obstacles:[],nextObstacle:900,
  coins:0,coinChain:0,coinTimer:0,prize:'—',shield:0,coinSpawn:1.2,coinItems:[],
  p:{x:120,y:0,w:62,h:78,vy:0,onGround:false,face:1,knifeCd:0,shootCd:0,inv:0}};
 }
@@ -58,8 +58,8 @@ function killZombie(z){if(z.dead)return;z.dead=true;state.kills++;state.score+=1
 function spawnZombie(){
  const boss=state.wave%5===0 && !state.zombies.some(z=>z.boss&&!z.dead);
  const side=Math.random()<.12?-1:1;
- const hp=boss?12:1+Math.floor(state.wave/4);
- state.zombies.push({x:side>0?W()+80:-90,y:groundY()-(boss?92:58),w:boss?74:42,h:boss?92:58,vx:(boss?48:58+state.wave*4)*-side,hp,boss,dead:false,phase:Math.random()*6});
+ const hp=boss?9:1+Math.floor(state.wave/6);
+ state.zombies.push({x:side>0?W()+80:-90,y:groundY()-(boss?92:58),w:boss?74:42,h:boss?92:58,vx:(boss?36:44+state.wave*2.5)*-side,hp,boss,dead:false,phase:Math.random()*6});
 }
 function makeObstacle(){
  const t=Math.random();state.obstacles.push({x:W()+150,y:groundY()-(t<.45?56:t<.75?80:44),w:t<.45?52:t<.75?72:48,h:t<.45?56:t<.75?80:44,type:t<.45?'crate':t<.75?'wall':'barrel'});
@@ -80,7 +80,7 @@ function awardPrize(){
     {name:'+10 MUNIÇÃO',do:()=>state.ammo+=10},
     {name:'+500 PONTOS',do:()=>state.score+=500},
     {name:'ESCUDO',do:()=>state.shield=6},
-    {name:'+1 VIDA',do:()=>state.lives=Math.min(5,state.lives+1)}
+    {name:'+1 VIDA',do:()=>state.lives=Math.min(7,state.lives+1)}
   ];
   const r=rewards[Math.floor(Math.random()*rewards.length)];
   r.do(); state.prize=r.name; state.coinChain=0;
@@ -97,9 +97,9 @@ function update(dt){
  state.coinItems.forEach(c=>{c.x-=state.speed*dt;c.bob+=dt*5;if(hit(p,{x:c.x,y:c.y+Math.sin(c.bob)*5,w:c.w,h:c.h})){c.dead=true;state.coins++;state.coinChain++;state.coinTimer=3;state.score+=100;if(state.coinChain>=5)awardPrize();}});
  state.coinTimer=Math.max(0,state.coinTimer-dt);if(state.coinTimer<=0)state.coinChain=0;
  state.coinItems=state.coinItems.filter(c=>!c.dead&&c.x>-40);
- state.spawn-=dt;if(state.spawn<=0){spawnZombie();state.spawn=Math.max(.35,1.5-state.wave*.07)}
- state.nextObstacle-=state.speed*dt;if(state.nextObstacle<0){makeObstacle();state.nextObstacle=500+Math.random()*650}
- state.zombies.forEach(z=>{if(z.dead)return;z.phase+=dt*5;z.x+=z.vx*dt;if(hit(p,z)&&p.inv<=0){if(state.shield>0){state.shield=0;p.inv=.8}else{state.lives--;p.inv=1.1;blood(p.x+p.w/2,p.y+p.h/2,10);if(state.lives<=0)end()}}})
+ state.spawn-=dt;if(state.spawn<=0){spawnZombie();state.spawn=Math.max(.65,2.05-state.wave*.055)}
+ state.nextObstacle-=state.speed*dt;if(state.nextObstacle<0){makeObstacle();state.nextObstacle=760+Math.random()*820}
+ state.zombies.forEach(z=>{if(z.dead)return;z.phase+=dt*5;z.x+=z.vx*dt;if(hit(p,z)&&p.inv<=0){if(state.shield>0){state.shield=0;p.inv=1.2}else{state.lives--;p.inv=1.8;blood(p.x+p.w/2,p.y+p.h/2,10);if(state.lives<=0)end()}}})
  state.bullets.forEach(b=>{b.x+=b.vx*dt;b.y+=b.vy*dt;state.zombies.forEach(z=>{if(!z.dead&&b.x>z.x&&b.x<z.x+z.w&&b.y>z.y&&b.y<z.y+z.h){z.hp-=b.damage;b.dead=true;blood(b.x,b.y,8);if(z.hp<=0)killZombie(z)}})})
  state.obstacles.forEach(o=>o.x-=state.speed*dt);
  state.blood.forEach(q=>{q.x+=q.vx*dt;q.y+=q.vy*dt;q.vy+=420*dt;q.l-=dt*1.7});
@@ -225,7 +225,7 @@ ctx.save();if(p.inv>0&&Math.floor(state.t*15)%2===0)ctx.globalAlpha=.35;ctx.shad
  if(state.paused){ctx.fillStyle='#000c';ctx.fillRect(0,0,W(),H());ctx.fillStyle='#19f5ff';ctx.font='900 42px Segoe UI';ctx.textAlign='center';ctx.fillText('PAUSADO',W()/2,H()/2);ctx.textAlign='left'}
 }
 function sync(){
- ui.score.textContent=String(Math.floor(state.score)).padStart(6,'0');ui.best.textContent=String(Math.max(state.best,Math.floor(state.score))).padStart(6,'0');ui.wave.textContent=String(state.wave).padStart(2,'0');ui.lives.textContent='❤'.repeat(state.lives)+'♡'.repeat(Math.max(0,5-state.lives));ui.ammo.textContent=state.ammo;ui.kills.textContent=state.kills;if(ui.coins)ui.coins.textContent=state.coins;if(ui.prize)ui.prize.textContent=state.prize;
+ ui.score.textContent=String(Math.floor(state.score)).padStart(6,'0');ui.best.textContent=String(Math.max(state.best,Math.floor(state.score))).padStart(6,'0');ui.wave.textContent=String(state.wave).padStart(2,'0');ui.lives.textContent='❤'.repeat(state.lives)+'♡'.repeat(Math.max(0,7-state.lives));ui.ammo.textContent=state.ammo;ui.kills.textContent=state.kills;if(ui.coins)ui.coins.textContent=state.coins;if(ui.prize)ui.prize.textContent=state.prize;
 }
 function loop(t){const dt=Math.min(.032,(t-last)/1000||0);last=t;update(dt);draw();requestAnimationFrame(loop)}sync();requestAnimationFrame(loop);
 

@@ -763,7 +763,7 @@ Corra pelas plataformas, colete moedas, salte sobre obstáculos e fuja dos monst
 
 <div class="stat">
 <small>VIDAS</small>
-<b id="lives">❤❤❤</b>
+<b id="lives">❤❤❤❤❤</b>
 </div>
 
 <div class="stat power-stat">
@@ -1015,10 +1015,10 @@ t:0,
 score:0,
 best:+localStorage.getItem("ildebrandoPlatformBest")||0,
 coins:0,
-lives:3,
+lives:5,
 energy:100,
 distance:0,
-speed:260,
+speed:205,
 power:null,
 powerTime:0,
 invincible:0,
@@ -1121,7 +1121,7 @@ r:10,
 t:Math.random()*6
 });
 
-if(Math.random()<.82){
+if(Math.random()<.58){
 
 const type=Math.random()<.68?"brown":"pink";
 
@@ -1130,19 +1130,19 @@ x:x+width*.62,
 y:groundY()-32,
 w:34,
 h:32,
-vx:(type==="pink"?-72:-48)-Math.random()*28,
+vx:(type==="pink"?-54:-38)-Math.random()*18,
 phase:Math.random()*6,
 type
 });
 
-if(Math.random()<.30)
+if(Math.random()<.15)
 
 state.enemies.push({
 x:x+width*.82,
 y:groundY()-32,
 w:34,
 h:32,
-vx:-42-Math.random()*24,
+vx:-34-Math.random()*16,
 phase:Math.random()*6,
 type:"brown"
 });
@@ -1211,7 +1211,7 @@ r:10,
 t:Math.random()*6
 });
 
-if(Math.random()<.84){
+if(Math.random()<.60){
 
 const type=Math.random()<.68?"brown":"pink";
 
@@ -1220,19 +1220,19 @@ x:x+width*.66,
 y:groundY()-32,
 w:34,
 h:32,
-vx:(type==="pink"?-76:-50)-Math.random()*40,
+vx:(type==="pink"?-56:-40)-Math.random()*22,
 phase:Math.random()*6,
 type
 });
 
-if(Math.random()<.28)
+if(Math.random()<.14)
 
 state.enemies.push({
 x:x+width*.84,
 y:groundY()-32,
 w:34,
 h:32,
-vx:-46-Math.random()*24,
+vx:-35-Math.random()*16,
 phase:Math.random()*6,
 type:"brown"
 });
@@ -1521,7 +1521,7 @@ if(!state.running||state.paused)return;
 state.t+=dt;
 
 state.speed=
-260+Math.min(220,state.distance/28);
+205+Math.min(145,state.distance/45);
 
 let p=state.p;
 
@@ -2469,7 +2469,7 @@ state.coins
 
 ui.lives.textContent=
 "❤".repeat(state.lives)+
-"♡".repeat(3-state.lives);
+"♡".repeat(Math.max(0,5-state.lives));
 
 ui.energy.style.width=
 Math.max(
