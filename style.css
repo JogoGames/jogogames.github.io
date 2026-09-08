@@ -21,3 +21,6 @@ footer{text-align:center;padding:12px 16px 34px;color:#8093aa}footer img{width:4
 @media(max-width:900px){.games{grid-template-columns:1fr}.card{min-height:220px}}
 @media(max-width:560px){.hero{width:min(100% - 20px,1180px);padding:18px 0 30px}.brand-neon{width:100%;padding:4px;margin-bottom:18px;border-radius:19px}.brand{max-height:130px;border-radius:15px}.games{width:calc(100% - 18px);gap:15px}.card{display:block;min-height:0;border-radius:18px}.card img{height:auto;min-height:0;aspect-ratio:16/9}.card>div{padding:18px}.card h2{font-size:26px}.card p{font-size:14px}.primary{min-height:46px}}
 @media(prefers-reduced-motion:reduce){.brand-neon{animation:none}}
+
+/* Brilho LED forte sem alterar o tamanho responsivo do logotipo. */
+.brand-neon{animation:brandNeon 3.2s linear infinite,brandGlow 1.7s ease-in-out infinite alternate}@keyframes brandGlow{from{box-shadow:0 0 12px #16ddffbb,0 0 24px #ff38cf66}to{box-shadow:0 0 18px #16ddffff,0 0 38px #16ddffaa,0 0 54px #ff38cf88}}@media(prefers-reduced-motion:reduce){.brand-neon{animation:none;box-shadow:0 0 18px #16ddffcc}}
