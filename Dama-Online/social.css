@@ -3,3 +3,6 @@
 .safety-note{margin:10px 12px 0;padding:9px 10px;border:1px solid #ffb02055;border-radius:10px;background:#ffb02012;color:#ffd58a;font-size:11px;line-height:1.4}.safety-tools{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:0 10px 10px}.safety-tools button{min-height:38px;border:1px solid #ff668055;border-radius:10px;background:#291421;color:#ffd8df;font-weight:800}.safety-tools button:disabled{opacity:.4}.safety-tools #kickUser{grid-column:1/-1;background:#5d1c2b;color:#fff}
 
 .chat-form{grid-template-columns:72px 1fr 62px}.chat-form #photoButton{padding:0 7px;background:#172638;color:#fff}.photo-input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+
+/* O seletor nativo fica sobre o botão: funciona em navegadores móveis que bloqueiam cliques simulados. */
+.chat-form{position:relative}.chat-form #photoButton{pointer-events:none}.chat-form .photo-input{position:absolute;left:8px;top:8px;width:72px;height:40px;opacity:0;pointer-events:auto;z-index:3;cursor:pointer}
