@@ -6,3 +6,6 @@
 
 /* O seletor nativo fica sobre o botão: funciona em navegadores móveis que bloqueiam cliques simulados. */
 .chat-form{position:relative}.chat-form #photoButton{pointer-events:none}.chat-form .photo-input{position:absolute;left:8px;top:8px;width:72px;height:40px;opacity:0;pointer-events:auto;z-index:3;cursor:pointer}
+
+/* Seletor nativo visível: compatibilidade máxima com celular. */
+.chat-form{grid-template-columns:105px 1fr 62px}.chat-form .photo-input-native{position:static;width:105px;height:40px;opacity:1;pointer-events:auto;color:transparent;padding:0;border:0;background:transparent}.photo-input-native::file-selector-button{width:105px;height:40px;border:1px solid #ffffff22;border-radius:10px;background:#172638;color:#fff;font-weight:800;cursor:pointer}
