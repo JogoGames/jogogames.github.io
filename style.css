@@ -3,7 +3,9 @@
 html{scroll-behavior:smooth}
 body{margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 50% 0,#10245a 0,#050b20 38%,var(--bg) 75%);color:var(--text);font-family:Segoe UI,Arial,sans-serif}
 .hero{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:34px 0 42px;text-align:center}
-.brand{display:block;width:min(820px,88vw);height:auto;max-height:205px;object-fit:contain;margin:0 auto 26px;border-radius:22px;filter:drop-shadow(0 0 22px #16ddff55)}
+.brand-neon{--brand-angle:0deg;display:block;width:min(830px,90vw);margin:0 auto 26px;padding:6px;border-radius:27px;background:conic-gradient(from var(--brand-angle),var(--cyan),#79fff1,var(--pink),var(--gold),var(--cyan));box-shadow:0 0 16px #16ddffaa,0 0 36px #ff38cf66;animation:brandNeon 3.2s linear infinite}
+.brand{display:block;width:100%;height:auto;max-height:205px;object-fit:contain;margin:0;border-radius:21px}
+@property --brand-angle{syntax:'<angle>';initial-value:0deg;inherits:false}@keyframes brandNeon{to{--brand-angle:360deg}}
 .eyebrow{margin:0 0 10px;color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.28em}
 h1{margin:0;font-size:clamp(34px,6vw,72px);line-height:1.02;text-shadow:0 0 24px #16ddff55}
 h1 span{background:linear-gradient(90deg,var(--cyan),#a66cff,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -17,4 +19,5 @@ h1 span{background:linear-gradient(90deg,var(--cyan),#a66cff,var(--pink),var(--g
 .card.pink{border-color:#ff38cf66}.card.pink span{color:var(--pink)}.card.gold{border-color:#ffd33d66}.card.gold span{color:var(--gold)}.card.violet{border-color:#9d65ff66}.card.violet span{color:#bd94ff}
 footer{text-align:center;padding:12px 16px 34px;color:#8093aa}footer img{width:44px;height:44px;object-fit:contain}footer p{margin:8px 0 0}
 @media(max-width:900px){.games{grid-template-columns:1fr}.card{min-height:220px}}
-@media(max-width:560px){.hero{width:min(100% - 20px,1180px);padding:18px 0 30px}.brand{width:100%;max-height:130px;margin-bottom:18px;border-radius:15px}.games{width:calc(100% - 18px);gap:15px}.card{display:block;min-height:0;border-radius:18px}.card img{height:auto;min-height:0;aspect-ratio:16/9}.card>div{padding:18px}.card h2{font-size:26px}.card p{font-size:14px}.primary{min-height:46px}}
+@media(max-width:560px){.hero{width:min(100% - 20px,1180px);padding:18px 0 30px}.brand-neon{width:100%;padding:4px;margin-bottom:18px;border-radius:19px}.brand{max-height:130px;border-radius:15px}.games{width:calc(100% - 18px);gap:15px}.card{display:block;min-height:0;border-radius:18px}.card img{height:auto;min-height:0;aspect-ratio:16/9}.card>div{padding:18px}.card h2{font-size:26px}.card p{font-size:14px}.primary{min-height:46px}}
+@media(prefers-reduced-motion:reduce){.brand-neon{animation:none}}
