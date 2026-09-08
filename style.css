@@ -24,3 +24,6 @@ footer{text-align:center;padding:12px 16px 34px;color:#8093aa}footer img{width:4
 
 /* Brilho LED forte sem alterar o tamanho responsivo do logotipo. */
 .brand-neon{animation:brandNeon 3.2s linear infinite,brandGlow 1.7s ease-in-out infinite alternate}@keyframes brandGlow{from{box-shadow:0 0 12px #16ddffbb,0 0 24px #ff38cf66}to{box-shadow:0 0 18px #16ddffff,0 0 38px #16ddffaa,0 0 54px #ff38cf88}}@media(prefers-reduced-motion:reduce){.brand-neon{animation:none;box-shadow:0 0 18px #16ddffcc}}
+
+/* Tamanho aprovado da primeira referência: moldura rente, sem faixas laterais. */
+.brand-neon{width:min(720px,92vw);padding:5px}.brand-neon .brand{width:100%;height:auto;max-height:none;object-fit:initial}@media(max-width:560px){.brand-neon{width:100%;padding:4px}}
