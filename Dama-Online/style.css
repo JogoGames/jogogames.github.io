@@ -15,3 +15,6 @@
 .logo-neon{padding:0;background:transparent;border:2px solid #20dafa;overflow:visible;animation:contornoNeon 3s linear infinite}.logo-neon .game-brand{border-radius:8px}@keyframes contornoNeon{0%,100%{border-color:#20dafa;box-shadow:0 0 7px #20dafa,inset 0 0 5px #20dafa}33%{border-color:#ff42ba;box-shadow:0 0 7px #ff42ba,inset 0 0 5px #ff42ba}66%{border-color:#ffd55c;box-shadow:0 0 7px #ffd55c,inset 0 0 5px #ffd55c}}
 
 .logo-neon{border-width:5px;border-radius:14px;box-shadow:0 0 12px currentColor,0 0 24px #20dafa55}.logo-neon .game-brand{border-radius:8px}
+
+/* O logo ocupa toda a moldura sem deformar. */
+header{height:auto;min-height:72px;padding-top:7px;padding-bottom:7px}.logo-neon{line-height:0}.logo-neon .game-brand{width:clamp(190px,24vw,280px);height:auto;max-height:none;object-fit:initial}@media(max-width:760px){header{min-height:64px;gap:9px;padding-left:8px;padding-right:8px}.logo-neon .game-brand{width:min(45vw,220px);height:auto}}
