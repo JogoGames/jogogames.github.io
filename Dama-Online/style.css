@@ -8,3 +8,5 @@
 
 /* Mantém o logotipo totalmente visível e o neon somente na moldura externa. */
 .logo-neon:after{display:none}
+
+@property --neon-angle{syntax:'<angle>';initial-value:0deg;inherits:false}.logo-neon{--neon-angle:0deg;background:conic-gradient(from var(--neon-angle),#20dafa,#ff42ba,#ffd55c,#20dafa);animation:molduraNeon 3s linear infinite}.logo-neon:before,.logo-neon:after{display:none!important}.logo-neon .game-brand{display:block;z-index:auto;background:#050812;border-radius:8px}@keyframes molduraNeon{to{--neon-angle:360deg}}@media(prefers-reduced-motion:reduce){.logo-neon{animation:none}}
